@@ -13,7 +13,6 @@ public class Main {
         Controller theController = new Controller(view, operation);
 
         view.setVisible(true);
-
     }
 
 }

@@ -161,6 +161,8 @@ public class Controller {
             }
             catch(NumberFormatException ex){
                 view.displayErrorMessage("Error 404.");
+            } catch (Exception ex) {
+                view.displayErrorMessage(ex.getMessage());
             }
         }
     }

@@ -74,6 +74,18 @@ public class Operatii {
         return polyReturn;
     }
 
+    public Polynomial inmultireMonomialAndPolynomial(Monomial monom, Polynomial poly){
+
+        Polynomial polyReturn = new Polynomial();
+
+        for(Monomial monoP: poly.getListOfMonom()){
+            polyReturn.addMonomToListOfMonom(new Monomial(monoP.getExp() + monom.getExp(), monoP.getCoef() * monom.getCoef()));
+        }
+        polyReturn.sortPolynomial();
+
+        return polyReturn;
+    }
+
     public Polynomial inmultire(Polynomial poly1, Polynomial poly2){
 
         resetElementFundInEachMonomOf(poly1);
@@ -100,18 +112,6 @@ public class Operatii {
                 polyReturn.addMonomToListOfMonom(new Monomial(monoPP1.getExp(), sum));
                 monoPP1.setFound(true);
             }
-        }
-        polyReturn.sortPolynomial();
-
-        return polyReturn;
-    }
-
-    public Polynomial inmultireMonomialAndPolynomial(Monomial monom, Polynomial poly){
-
-        Polynomial polyReturn = new Polynomial();
-
-        for(Monomial monoP: poly.getListOfMonom()){
-            polyReturn.addMonomToListOfMonom(new Monomial(monoP.getExp() + monom.getExp(), monoP.getCoef() * monom.getCoef()));
         }
         polyReturn.sortPolynomial();
 
@@ -182,9 +182,13 @@ public class Operatii {
         return polyReturn;
     }
 
-    public String resetButtonOp(Polynomial poly1, Polynomial poly2){
-        poly1.getListOfMonom().clear();
-        poly2.getListOfMonom().clear();
-        return "Resetul s-a realizat cu succes!";
+    public String resetButtonOp(Polynomial poly1, Polynomial poly2) throws Exception {
+        if(poly1 != null && poly2 != null) {
+            poly1.getListOfMonom().clear();
+            poly2.getListOfMonom().clear();
+            return "Resetul s-a realizat cu succes!";
+        } else {
+            throw new Exception("Reset invalid! Cel putin un polinom este null!");
+        }
     }
 }
