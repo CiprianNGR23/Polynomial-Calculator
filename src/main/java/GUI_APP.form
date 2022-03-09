@@ -22,7 +22,10 @@
                 <preferred-size width="350" height="35"/>
               </grid>
             </constraints>
-            <properties/>
+            <properties>
+              <font name="JetBrains Mono" size="18"/>
+              <text value=""/>
+            </properties>
           </component>
           <vspacer id="6b9d0">
             <constraints>
@@ -128,6 +131,7 @@
               </grid>
             </constraints>
             <properties>
+              <font name="JetBrains Mono" size="18"/>
               <text value=""/>
             </properties>
           </component>
@@ -136,6 +140,7 @@
               <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
+              <font name="JetBrains Mono" size="18"/>
               <text value="     "/>
             </properties>
           </component>
