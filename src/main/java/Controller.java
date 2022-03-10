@@ -99,7 +99,7 @@ public class Controller {
                 poly1.createMonomFromString(view.getTextPoly1().getText());
                 poly2.createMonomFromString(view.getTextPoly2().getText());
 
-                view.setLabelResultText(operation.impartire(poly1, poly2));
+                view.setLabelResultText(operation.impartire(poly1, poly2).toString());
             }
             catch(NumberFormatException ex){
                 view.displayErrorMessage("Error 404.");
@@ -156,8 +156,8 @@ public class Controller {
 
             try{
                 view.setLabelResultText(operation.resetButtonOp(poly1, poly2));
-                view.getTextPoly1().setText("");
-                view.getTextPoly2().setText("");
+                view.getTextPoly1().setText("P1:");
+                view.getTextPoly2().setText("P2:");
             }
             catch(NumberFormatException ex){
                 view.displayErrorMessage("Error 404.");

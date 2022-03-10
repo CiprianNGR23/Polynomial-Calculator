@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Operatii {
 
     public Operatii(){
@@ -118,7 +120,9 @@ public class Operatii {
         return polyReturn;
     }
 
-    public String impartire(Polynomial poly1, Polynomial poly2) throws Exception {
+    public ArrayList<Polynomial> impartire(Polynomial poly1, Polynomial poly2) throws Exception {
+
+        ArrayList<Polynomial> c = new ArrayList<Polynomial>();
 
         resetElementFundInEachMonomOf(poly1);
         resetElementFundInEachMonomOf(poly2);
@@ -139,7 +143,10 @@ public class Operatii {
 
             //System.out.println("monoP1: " + monoP1.getCoef() + "x^" + monoP1.getExp());
             if(firstOfPoly2.getCoef() != 0.0f) {
-                Monomial monomAux = new Monomial(monoP1.getExp() - firstOfPoly2.getExp(), monoP1.getCoef() / firstOfPoly2.getCoef());
+
+                Monomial monomAux = new Monomial(monoP1.getExp() - firstOfPoly2.getExp(),
+                        monoP1.getCoef() / firstOfPoly2.getCoef());
+
                 //System.out.println("Monom: " + monomAux.getCoef() + "x^" + monomAux.getExp());
                 polyReturnCat.addMonomToListOfMonom(monomAux);
 
@@ -151,8 +158,9 @@ public class Operatii {
             if(!poly1.getListOfMonom().isEmpty())
                 monoP1 = poly1.getListOfMonom().getFirst();
         }
-
-        return "C: " + polyReturnCat.toString() + "  R: " + poly1.toString();
+        c.add(polyReturnCat);
+        c.add(poly1);
+        return c;
     }
 
     public Polynomial integrala(Polynomial poly1){

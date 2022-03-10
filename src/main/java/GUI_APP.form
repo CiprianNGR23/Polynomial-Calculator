@@ -24,7 +24,7 @@
             </constraints>
             <properties>
               <font name="JetBrains Mono" size="18"/>
-              <text value=""/>
+              <text value="P1:"/>
             </properties>
           </component>
           <vspacer id="6b9d0">
@@ -132,7 +132,7 @@
             </constraints>
             <properties>
               <font name="JetBrains Mono" size="18"/>
-              <text value=""/>
+              <text value="P2:"/>
             </properties>
           </component>
           <component id="80b33" class="javax.swing.JLabel" binding="labelResult">
